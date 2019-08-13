@@ -41,14 +41,14 @@ if (module.hot && typeof module.hot.dispose === 'function') {
 
 // Connect to WebpackDevServer via a socket.
 const getUrlFormat = () => {
-  const url = process.env.webpackDevHotReloadUrl || url.format({
+  const mainUrl = process.env.webpackDevHotReloadUrl || url.format({
     protocol: window.location.protocol,
     hostname: window.location.hostname,
     port: window.location.port
   })
   // Hardcoded in WebpackDevServer
   const socketURL = '/sockjs-node'
-  return url + socketURL
+  return mainUrl + socketURL
 }
 var connection = new SockJS(getUrlFormat());
 
