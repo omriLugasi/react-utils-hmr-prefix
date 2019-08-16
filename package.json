@@ -1,5 +1,5 @@
 {
-  "name": "wepackHotClient-hmr-prefix",
+  "name": "react-utils-hmr-prefix",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
