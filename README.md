@@ -1,4 +1,4 @@
-# webpack hot dev client hmr fix
+# react-utils-hmr-prefix
 If you familier with [Create react app](https://github.com/facebook/create-react-app) and the [prefix bug](https://github.com/facebook/create-react-app/issues/3814), you came to right place!
 
 [![npm version](https://badge.fury.io/js/react-utils-hmr-prefix.svg)](https://badge.fury.io/js/react-utils-hmr-prefix)
