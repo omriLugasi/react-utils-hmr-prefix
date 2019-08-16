@@ -1,9 +1,8 @@
 var SockJS = require('sockjs-client');
 var stripAnsi = require('strip-ansi');
-var url = require('url');
-var launchEditorEndpoint = '/__open-stack-frame-in-editor'
-var formatWebpackMessages = require('./formatWebpackMessages');
 var ErrorOverlay = require('react-error-overlay');
+var formatWebpackMessages = require('./formatWebpackMessages');
+const launchEditorEndpoint = '/__open-stack-frame-in-editor'
 
 ErrorOverlay.setEditorHandler(function editorHandler(errorLocation) {
   // Keep this sync with errorOverlayMiddleware.js
@@ -41,14 +40,10 @@ if (module.hot && typeof module.hot.dispose === 'function') {
 
 // Connect to WebpackDevServer via a socket.
 const getUrlFormat = () => {
-  const mainUrl = process.env.webpackDevHotReloadUrl || url.format({
-    protocol: window.location.protocol,
-    hostname: window.location.hostname,
-    port: window.location.port
-  })
-  // Hardcoded in WebpackDevServer
-  const socketURL = '/sockjs-node'
-  return mainUrl + socketURL
+  const origin = window.location.origin
+  const content = document.getElementById('dev-sock-js').content
+  const prefix = !content ? content : `${ content }/`
+  return `${ origin }/${ prefix }sockjs-node`
 }
 var connection = new SockJS(getUrlFormat());
 
