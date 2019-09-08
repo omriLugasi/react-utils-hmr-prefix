@@ -19,13 +19,13 @@ var connection = new SockJS(
 );
 
 ```
-As you can see in the above code, the [sockJS](https://github.com/sockjs/sockjs-client) implementation is **Hard Coded** in the code, that's mean that you can't add prefix to your development hmr socket.
+As you can see in the above code, the [sockJS](https://github.com/sockjs/sockjs-client) implementation is **Hard Coded** in the code, that means that you can't add a prefix to your development hmr socket.
 
-if you will try to use your app with prerix for example
+if you will try using your app with a prerix, for example:
 
 `http://localhost:3000/prefix`
 
-it's not gonna work, no metter how hard you will try.
+it's not going to work, no matter how hard you try.
 
 `react-utils-hmr-prefix` will help you to accomplish the above with minimum changes.
 
@@ -64,7 +64,7 @@ require.resolve('react-utils-hmr-prefix')
  <meta id="dev-sock-js" content="%SOCK_JS_PREFIX%">
 ```
 
-Those actions will create socket on yout origin + the custom prefix, for example `http://localhost:3000/myCustomPrefix`
+Those actions will create a socket on your origin + the custom prefix, for example `http://localhost:3000/myCustomPrefix`
 
 
 
